@@ -16,17 +16,11 @@ function Square(name, pricetext, color, price, groupNumber, baserent, rent1, ren
   this.rent5 = rent5 || 0
   this.landcount = 0
 
-  if (groupNumber === 3 || groupNumber === 4) {
-    this.houseprice = 50
-  } else if (groupNumber === 5 || groupNumber === 6) {
-    this.houseprice = 100
-  } else if (groupNumber === 7 || groupNumber === 8) {
-    this.houseprice = 150
-  } else if (groupNumber === 9 || groupNumber === 10) {
-    this.houseprice = 200
-  } else {
-    this.houseprice = 0
-  }
+  if (groupNumber === 3 || groupNumber === 4) this.houseprice = 50
+  else if (groupNumber === 5 || groupNumber === 6) this.houseprice = 100
+  else if (groupNumber === 7 || groupNumber === 8) this.houseprice = 150
+  else if (groupNumber === 9 || groupNumber === 10) this.houseprice = 200
+  else this.houseprice = 0
 }
 
 function Card(text, action) {
@@ -37,6 +31,7 @@ function Card(text, action) {
 function corrections() {
   document.getElementById('cell1name').textContent = 'Mediter-ranean Avenue'
 
+  // Add images to enlarges.
   document.getElementById('enlarge5token').innerHTML +=
     '<img src="assets/img/train_icon.png" height="60" width="65" alt="" style="position: relative; bottom: 20px;" />'
   document.getElementById('enlarge15token').innerHTML +=
@@ -116,8 +111,8 @@ square[37] = new Square('Park Place', '$350', '#0000FF', 350, 10, 35, 175, 500, 
 square[38] = new Square('LUXURY TAX', 'Pay $100', '#FFFFFF')
 square[39] = new Square('Boardwalk', '$400', '#0000FF', 400, 10, 50, 200, 600, 1400, 1700, 2000)
 
-var communityChestCards = []
-var chanceCards = []
+var communityChestCards = [],
+  chanceCards = []
 
 communityChestCards[0] = new Card('Get out of Jail, Free. This card may be kept until needed or sold.', function (p) {
   p.communityChestJailCard = true
