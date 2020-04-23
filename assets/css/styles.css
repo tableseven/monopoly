@@ -253,7 +253,7 @@ td {
   width: 99%;
   margin: 0px;
   background-color: #305bc9;
-  background-image: url(images/menu_background.png);
+  background-image: url(../img/menu_background.png);
   overflow: hidden;
 }
 
